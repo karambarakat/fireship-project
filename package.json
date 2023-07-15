@@ -3,13 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "workspaces": [
+    "fn/*",
+    "hi"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "build": "pnpm -r build",
+    "deploy": "firebase deploy --env-vars-file .env.local.yaml"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "puppeteer": "^20.8.2"
+  },
+  "devDependencies": {
+    "firebase-tools": "^12.4.4"
   }
 }
